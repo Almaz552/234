@@ -163,6 +163,26 @@ public class HelloController {
                         .map(Integer::parseInt)
                         .collect(Collectors.toList());
 
+                int min = Integer.parseInt(minRange.getText());
+                int max = Integer.parseInt(maxRange.getText());
+
+                // Получаем список исключаемых чисел
+                List<Integer> excludedNumbers = new ArrayList<>();
+                if (excludeNumbersCheckBox.isSelected() && excludedNumbersField.getText() != null && !excludedNumbersField.getText().isEmpty()) {
+                    excludedNumbers = Arrays.stream(excludedNumbersField.getText().split(","))
+                            .map(String::trim)
+                            .map(Integer::parseInt)
+                            .collect(Collectors.toList());
+                }
+
+                // Создаем список доступных чисел для генерации
+                List<Integer> availableNumbers = new ArrayList<>();
+                for (int i = min; i <= max; i++) {
+                    if (!excludedNumbers.contains(i)) {
+                        availableNumbers.add(i);
+                    }
+                }
+
                 if (numbers.isEmpty()) {
                     number.setText("Список пуст");
                     return;
