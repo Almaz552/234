@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumgen.HelloController">
+    <children>
+        <Label layoutX="369.0" layoutY="33.0" text="Рандомайзер">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="number" layoutX="411.0" layoutY="96.0" text="рандомное число :" />
+        <VBox layoutX="250.0" layoutY="245.0" prefHeight="250.0" prefWidth="400.0">
+            <children>
+                <Label text="Выберите источник:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <RadioButton fx:id="rangeRadioButton" mnemonicParsing="false" text="Из диапазона">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sourceToggleGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="listRadioButton" mnemonicParsing="false" text="Из списка" toggleGroup="$sourceToggleGroup" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label text="От:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="minRange" prefWidth="80.0" />
+                        <Label text="До:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="maxRange" prefWidth="80.0" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <TextField fx:id="numberListField" promptText="Введите числа через запятую" visible="false">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </TextField>
+                <CheckBox fx:id="excludeNumbersCheckBox" mnemonicParsing="false" text="Исключить числа">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </CheckBox>
+                <TextField fx:id="excludedNumbersField" promptText="Введите исключаемые числа через запятую" visible="false">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </TextField>
+                <CheckBox fx:id="excludeRepetitionsCheckBox" mnemonicParsing="false" text="Исключить повторения" />
+            </children>
+        </VBox>
+        <Button fx:id="create" layoutX="383.0" layoutY="188.0" mnemonicParsing="false" text="Сгенерировать">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
