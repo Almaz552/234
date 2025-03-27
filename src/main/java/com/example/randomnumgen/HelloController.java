@@ -175,7 +175,6 @@ public class HelloController {
                             .collect(Collectors.toList());
                 }
 
-                // Создаем список доступных чисел для генерации
                 List<Integer> availableNumbers = new ArrayList<>();
                 for (int i = min; i <= max; i++) {
                     if (!excludedNumbers.contains(i)) {
