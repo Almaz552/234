@@ -187,26 +187,13 @@ public class HelloController {
                 // Исключаем повторения, если установлен флажок
                 if (excludeRepetitionsCheckBox.isSelected()) {
                     availableNumbers.removeAll(generatedNumbers);
-                }
-
-                if (availableNumbers.isEmpty()) {
                     if (!allUniqueRepeated) {
                         number.setText("Все уникальные значения повторились!");
                         allUniqueRepeated = true;
                         generatedNumbers.clear(); // Очищаем историю, чтобы начать заново
                         return;
-                    } else {
-                        generatedNumbers.clear(); // Очищаем историю и генерируем заново
-                        allUniqueRepeated = false;
-                        // Восстанавливаем список доступных чисел после очистки generatedNumbers
-                        for (int i = min; i <= max; i++) {
-                            if (!excludedNumbers.contains(i)) {
-                                availableNumbers.add(i);
-                            }
-                        }
                     }
                 }
-                allUniqueRepeated = false;
 
                 if (numbers.isEmpty()) {
                     number.setText("Список пуст");
