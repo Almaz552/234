@@ -12,14 +12,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumgen.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumgen.HelloController">
     <children>
         <Label layoutX="369.0" layoutY="33.0" text="Рандомайзер">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <Label fx:id="number" layoutX="411.0" layoutY="96.0" text="рандомное число :" />
+        <Label fx:id="number" layoutX="369.0" layoutY="89.0" text=" ">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
         <VBox layoutX="250.0" layoutY="245.0" prefHeight="250.0" prefWidth="400.0">
             <children>
                 <Label text="Выберите источник:">
@@ -77,7 +80,7 @@
                 <CheckBox fx:id="excludeRepetitionsCheckBox" mnemonicParsing="false" text="Исключить повторения" />
             </children>
         </VBox>
-        <Button fx:id="create" layoutX="383.0" layoutY="188.0" mnemonicParsing="false" text="Сгенерировать">
+        <Button fx:id="create" layoutX="383.0" layoutY="188.0" mnemonicParsing="false" style="-fx-background-color: #FFD700;" text="Сгенерировать">
             <font>
                 <Font size="20.0" />
             </font>

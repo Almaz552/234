@@ -163,8 +163,8 @@ public class HelloController {
                         .map(Integer::parseInt)
                         .collect(Collectors.toList());
 
-                int min = Integer.parseInt(minRange.getText());
-                int max = Integer.parseInt(maxRange.getText());
+                int min = 1;
+                int max = 100;
 
                 // Получаем список исключаемых чисел
                 List<Integer> excludedNumbers = new ArrayList<>();
