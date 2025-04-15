@@ -163,9 +163,6 @@ public class HelloController {
                         .map(Integer::parseInt)
                         .collect(Collectors.toList());
 
-                int min = 1;
-                int max = 100;
-
                 // Получаем список исключаемых чисел
                 List<Integer> excludedNumbers = new ArrayList<>();
                 if (excludeNumbersCheckBox.isSelected() && excludedNumbersField.getText() != null && !excludedNumbersField.getText().isEmpty()) {
@@ -175,34 +172,53 @@ public class HelloController {
                             .collect(Collectors.toList());
                 }
 
+                // Удаляем исключаемые числа из списка
                 numbers.removeAll(excludedNumbers);
-
-                List<Integer> availableNumbers = new ArrayList<>();
-                for (int i = min; i <= max; i++) {
-                    if (!excludedNumbers.contains(i)) {
-                        availableNumbers.add(i);
-                    }
-                }
-
-                // Исключаем повторения, если установлен флажок
-                if (excludeRepetitionsCheckBox.isSelected()) {
-                    availableNumbers.removeAll(generatedNumbers);
-                    if (!allUniqueRepeated) {
-                        number.setText("Все уникальные значения повторились!");
-                        allUniqueRepeated = true;
-                        generatedNumbers.clear(); // Очищаем историю, чтобы начать заново
-                        return;
-                    }
-                }
 
                 if (numbers.isEmpty()) {
                     number.setText("Список пуст");
                     return;
                 }
 
-                Random random = new Random();
-                int randomIndex = random.nextInt(numbers.size());
-                number.setText(String.valueOf(numbers.get(randomIndex)));
+                // Если нужно исключить повторения
+                if (excludeRepetitionsCheckBox.isSelected()) {
+                    // Создаем копию списка, исключая уже сгенерированные числа
+                    List<Integer> availableNumbers = new ArrayList<>(numbers);
+                    availableNumbers.removeAll(generatedNumbers);
+
+                    // Если все числа уже были использованы
+                    if (availableNumbers.isEmpty()) {
+                        if (!allUniqueRepeated) {
+                            number.setText("Все уникальные значения повторились!");
+                            allUniqueRepeated = true;
+                            generatedNumbers.clear(); // Сбрасываем историю
+                            return;
+                        } else {
+                            // Если мы уже отображали сообщение о повторении, начинаем заново
+                            generatedNumbers.clear();
+                            allUniqueRepeated = false;
+                            availableNumbers = new ArrayList<>(numbers); // Восстанавливаем список
+                        }
+                    } else {
+                        // Если еще есть доступные числа, сбрасываем флаг
+                        allUniqueRepeated = false;
+                    }
+
+                    // Генерируем случайное число из доступных
+                    Random random = new Random();
+                    int randomIndex = random.nextInt(availableNumbers.size());
+                    int randomNumber = availableNumbers.get(randomIndex);
+                    number.setText(String.valueOf(randomNumber));
+
+                    // Добавляем в историю генерированных чисел
+                    generatedNumbers.add(randomNumber);
+                } else {
+                    // Если повторения разрешены, просто выбираем случайное число из списка
+                    Random random = new Random();
+                    int randomIndex = random.nextInt(numbers.size());
+                    int randomNumber = numbers.get(randomIndex);
+                    number.setText(String.valueOf(randomNumber));
+                }
             } else {
                 number.setText("Выберите источник");
             }
@@ -211,3 +227,4 @@ public class HelloController {
         }
     }
 }
+
