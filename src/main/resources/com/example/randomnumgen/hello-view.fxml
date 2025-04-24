@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumgen.HelloController">
+    <children>
+        <Label fx:id="number" layoutX="369.0" layoutY="89.0" text=" ">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <VBox layoutX="716.0" layoutY="250.0" prefHeight="250.0" prefWidth="400.0">
+            <children>
+                <Label text="Выберите источник:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.30925683417908">
+                           <color>
+                              <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" blue="0.650424599647522" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <RadioButton fx:id="rangeRadioButton" mnemonicParsing="false" text="Из диапазона">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="sourceToggleGroup" />
+                            </toggleGroup>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.30925683417908">
+                                 <color>
+                                    <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5884146341463414">
+                                 <color>
+                                    <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" blue="0.650424599647522" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                        </RadioButton>
+                        <RadioButton fx:id="listRadioButton" mnemonicParsing="false" text="Из списка" toggleGroup="$sourceToggleGroup">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.30925683417908">
+                                 <color>
+                                    <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5884146341463414">
+                                 <color>
+                                    <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" blue="0.650424599647522" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill></RadioButton>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label text="От:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.30925683417908">
+                                 <color>
+                                    <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5884146341463414">
+                                 <color>
+                                    <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" blue="0.650424599647522" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                        </Label>
+                        <TextField fx:id="minRange" prefWidth="80.0" />
+                        <Label text="До:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.30925683417908">
+                                 <color>
+                                    <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5884146341463414">
+                                 <color>
+                                    <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" blue="0.650424599647522" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                        </Label>
+                        <TextField fx:id="maxRange" prefWidth="80.0" style="-fx-background-color: ;" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <TextField fx:id="numberListField" promptText="Введите числа через запятую" visible="false">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </TextField>
+                <CheckBox fx:id="excludeNumbersCheckBox" mnemonicParsing="false" text="Исключить числа">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.02348993288590604">
+                           <color>
+                              <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.30925683417908">
+                           <color>
+                              <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" blue="0.650424599647522" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="15.0" />
+               </font>
+                </CheckBox>
+                <TextField fx:id="excludedNumbersField" promptText="Введите исключаемые числа через запятую" visible="false">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </TextField>
+                <CheckBox fx:id="excludeRepetitionsCheckBox" mnemonicParsing="false" text="Исключить повторения">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.02348993288590604">
+                           <color>
+                              <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.30925683417908">
+                           <color>
+                              <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5884146341463414">
+                           <color>
+                              <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" blue="0.650424599647522" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></CheckBox>
+            </children>
+        </VBox>
+        <Button fx:id="create" layoutX="762.0" layoutY="142.0" mnemonicParsing="false" style="-fx-background-color: #FFFFF;" text="Сгенерировать">
+            <font>
+                <Font size="20.0" />
+            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.019200000911951065" green="0.04906189814209938" blue="0.9599999785423279" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.30925683417908">
+                     <color>
+                        <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5884146341463414">
+                     <color>
+                        <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" blue="0.650424599647522" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+        </Button>
+      <Label layoutX="400.0" layoutY="89.0" prefHeight="59.0" prefWidth="176.0" AnchorPane.bottomAnchor="542.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="359.0" AnchorPane.topAnchor="89.0" />
+      <Label layoutX="785.0" layoutY="60.0" text="Рандомайзер">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.24946114420890808" green="0.04650000110268593" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.02348993288590604">
+                     <color>
+                        <Color red="0.24946114420890808" green="0.04650000110268593" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.30925683417908">
+                     <color>
+                        <Color red="0.49577686190605164" green="0.055799998342990875" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5884146341463414">
+                     <color>
+                        <Color red="0.7296392917633057" green="0.055799998342990875" blue="0.9300000071525574" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" blue="0.650424599647522" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+    </children>
+</AnchorPane>
