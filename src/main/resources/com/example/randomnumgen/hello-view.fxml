@@ -17,15 +17,46 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.randomnumgen.HelloController">
     <children>
-        <Label fx:id="number" layoutX="369.0" layoutY="89.0" text=" ">
+        <Label fx:id="number" layoutX="776.0" layoutY="164.0" text=" ">
          <font>
-            <Font size="20.0" />
-         </font></Label>
-        <VBox layoutX="716.0" layoutY="250.0" prefHeight="250.0" prefWidth="400.0">
+            <Font size="25.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.250980406999588" green="0.0470588244497776" blue="0.929411768913269" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.31772794238009494">
+                     <color>
+                        <Color red="0.4941176474094391" green="0.054901961237192154" blue="0.929411768913269" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6360288099525289">
+                     <color>
+                        <Color red="0.729411780834198" green="0.054901961237192154" blue="0.929411768913269" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" blue="0.6509804129600525" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+        <VBox layoutX="716.0" layoutY="374.0" prefHeight="253.0" prefWidth="415.0">
             <children>
                 <Label text="Выберите источник:">
                     <font>
-                        <Font size="15.0" />
+                        <Font size="25.0" />
                     </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -96,6 +127,9 @@
                            </stops>
                         </LinearGradient>
                      </textFill>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                         </RadioButton>
                         <RadioButton fx:id="listRadioButton" mnemonicParsing="false" text="Из списка" toggleGroup="$sourceToggleGroup">
                      <textFill>
@@ -128,7 +162,10 @@
                               </Stop>
                            </stops>
                         </LinearGradient>
-                     </textFill></RadioButton>
+                     </textFill>
+                     <font>
+                        <Font size="20.0" />
+                     </font></RadioButton>
                     </children>
                     <padding>
                         <Insets bottom="5.0" top="5.0" />
@@ -138,7 +175,7 @@
                     <children>
                         <Label text="От:">
                             <font>
-                                <Font size="15.0" />
+                                <Font size="20.0" />
                             </font>
                      <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -175,7 +212,7 @@
                         <TextField fx:id="minRange" prefWidth="80.0" />
                         <Label text="До:">
                             <font>
-                                <Font size="15.0" />
+                                <Font size="20.0" />
                             </font>
                      <textFill>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -256,7 +293,7 @@
                   </LinearGradient>
                </textFill>
                <font>
-                  <Font size="15.0" />
+                  <Font size="20.0" />
                </font>
                 </CheckBox>
                 <TextField fx:id="excludedNumbersField" promptText="Введите исключаемые числа через запятую" visible="false">
@@ -266,7 +303,7 @@
                 </TextField>
                 <CheckBox fx:id="excludeRepetitionsCheckBox" mnemonicParsing="false" text="Исключить повторения">
                <font>
-                  <Font size="15.0" />
+                  <Font size="20.0" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -301,9 +338,9 @@
                </textFill></CheckBox>
             </children>
         </VBox>
-        <Button fx:id="create" layoutX="762.0" layoutY="142.0" mnemonicParsing="false" style="-fx-background-color: #FFFFF;" text="Сгенерировать">
+        <Button fx:id="create" layoutX="731.0" layoutY="267.0" mnemonicParsing="false" style="-fx-background-color: #FFFFF;" text="Сгенерировать">
             <font>
-                <Font size="20.0" />
+                <Font size="27.0" />
             </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -337,10 +374,9 @@
             </LinearGradient>
          </textFill>
         </Button>
-      <Label layoutX="400.0" layoutY="89.0" prefHeight="59.0" prefWidth="176.0" AnchorPane.bottomAnchor="542.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="359.0" AnchorPane.topAnchor="89.0" />
-      <Label layoutX="785.0" layoutY="60.0" text="Рандомайзер">
+      <Label layoutX="719.0" layoutY="63.0" text="Рандомайзер">
          <font>
-            <Font size="20.0" />
+            <Font size="40.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
