@@ -52,7 +52,7 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-        <VBox layoutX="716.0" layoutY="374.0" prefHeight="253.0" prefWidth="415.0">
+        <VBox layoutX="719.0" layoutY="374.0" prefHeight="301.0" prefWidth="415.0">
             <children>
                 <Label text="Выберите источник:">
                     <font>
@@ -173,7 +173,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                     <children>
-                        <Label text="От:">
+                        <Label fx:id="mii" text="От:">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -210,7 +210,7 @@
                      </textFill>
                         </Label>
                         <TextField fx:id="minRange" prefWidth="80.0" />
-                        <Label text="До:">
+                        <Label fx:id="maa" text="До:">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -313,9 +313,9 @@
                               <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
                            </color>
                         </Stop>
-                        <Stop offset="0.02348993288590604">
+                        <Stop offset="0.016778523489932886">
                            <color>
-                              <Color red="0.2185642123222351" green="0.013340643607079983" blue="0.9605262875556946" />
+                              <Color red="0.21960784494876862" green="0.0117647061124444" blue="0.9607843160629272" />
                            </color>
                         </Stop>
                         <Stop offset="0.30925683417908">

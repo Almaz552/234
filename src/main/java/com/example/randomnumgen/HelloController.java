@@ -20,7 +20,13 @@ public class HelloController {
     private URL location;
 
     @FXML
-    private Label number; // Label для отображения случайного числа
+    private Label number;// Label для отображения случайного числа
+
+    @FXML
+    private Label mii;
+
+    @FXML
+    private Label maa;
 
     @FXML
     private TextField minRange; // Поле для ввода минимального значения диапазона
@@ -58,6 +64,8 @@ public class HelloController {
     @FXML
     void initialize() {
         assert number != null : "fx:id=\"number\" was not injected: check your FXML file 'hello-view.fxml'.";
+        assert mii != null : "fx:id=\"mii\" was not injected: check your FXML file 'hello-view.fxml'.";
+        assert maa != null : "fx:id=\"maa\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert minRange != null : "fx:id=\"minRange\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert maxRange != null : "fx:id=\"maxRange\" was not injected: check your FXML file 'hello-view.fxml'.";
         assert numberListField != null : "fx:id=\"numberListField\" was not injected: check your FXML file 'hello-view.fxml'.";
@@ -88,8 +96,11 @@ public class HelloController {
         boolean isExcludeNumbersChecked = excludeNumbersCheckBox.isSelected();
 
         // Поля для диапазона
+        mii.setVisible(isRangeSelected);
         minRange.setVisible(isRangeSelected);
+        maa.setVisible(isRangeSelected);
         maxRange.setVisible(isRangeSelected);
+
 
         // Поле для списка чисел
         numberListField.setVisible(isListSelected);
